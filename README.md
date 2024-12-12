@@ -17,9 +17,13 @@
 
 现有进度如下：
 
-![QQ20241211-164240-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/34158171-0f64-4ef6-88eb-21d57c1ac047)
+![progress](https://github.com/user-attachments/assets/34158171-0f64-4ef6-88eb-21d57c1ac047)
 
 <table>
+    <tr>
+    <td>12/12</td>
+    <td>可以实现动态小白啦 <img valign="middle" src="https://github.com/user-attachments/assets/f763157d-d922-4286-8ed7-46f2a8b5cc91" width="50"/></td>
+  </tr>
   <tr>
     <td>12/11</td>
     <td>每隔1秒小白随机换一个位置</td>
@@ -29,4 +33,7 @@
     <td>运行EyeProtectPet.py，桌面出现小白</td>
   </tr>
 </table>
+
+
+
 
