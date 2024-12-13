@@ -16,12 +16,17 @@ import random
 import math
 
 class Pet(object):
+<<<<<<< HEAD
     def __init__(self, width=400, height=400):
         # self.image = 'images/xiaogou/xiaogou_0.png'  # 导入图像
         self.image_url = 'images/xiaogou/xiaogou_'
         self.image_key = 1
         self.image = self.image_url + str(self.image_key) + '.png'
 
+=======
+    def __init__(self, width=800, height=400):
+        self.image = 'images/xiaogou/xiaogou_0.png'  # 导入图像
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
         self.rect_x = width
         self.rect_y = height
         self.image_num = 23  # 图片数量
@@ -44,15 +49,23 @@ class App(QWidget):
 
         self.init_ui()
 
+<<<<<<< HEAD
         # 创建定时器，调用 move_pet 方法
         self.move_timer = QTimer(self)
         self.move_timer.timeout.connect(self.move_pet)
         self.move_timer.start((self.pet.image_num + 1) * 100)
+=======
+        # 创建定时器，每 1 秒调用一次 move_pet 方法
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.move_pet)
+        self.timer.start(1000)
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
 
         # 创建一个定时器，10 秒后关闭窗口
         self.close_timer = QTimer(self)
         self.close_timer.timeout.connect(self.close_app)
         self.close_timer.setSingleShot(True)  # 只触发一次
+<<<<<<< HEAD
         self.close_timer.start((self.pet.image_num + 1) * 100 * 8)  # 10 秒后触发
 
         # 创建一个定时器，0.1 秒更新图片实现gif效果
@@ -66,6 +79,9 @@ class App(QWidget):
         self.pm_pet = QPixmap(self.pet.image)
         self.lb_pet.setPixmap(self.pm_pet)
         pass
+=======
+        self.close_timer.start(10000)  # 10 秒后触发
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
 
     def init_ui(self):
         # 设置窗口为全屏
@@ -82,13 +98,17 @@ class App(QWidget):
         self.setAttribute(Qt.WA_TranslucentBackground, True)
         self.showMaximized()
 
+<<<<<<< HEAD
         # 记录上次宠物所在的区域
         self.last_area = None
 
+=======
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
 
     def move_pet(self):
         # 随机生成新的位置
         screen = QDesktopWidget().screenGeometry()
+<<<<<<< HEAD
 
         # 将屏幕分成四个区域
         width = screen.width() // 2
@@ -109,10 +129,15 @@ class App(QWidget):
 
         # new_x = random.randint(0, screen.width() - self.pm_pet.width())
         # new_y = random.randint(0, screen.height() - self.pm_pet.height())
+=======
+        new_x = random.randint(0, screen.width() - self.pm_pet.width())
+        new_y = random.randint(0, screen.height() - self.pm_pet.height())
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
 
         # 移动宠物标签到新位置
         self.lb_pet.move(new_x, new_y)
 
+<<<<<<< HEAD
         # 记录当前区域
         self.last_area = new_area
 
@@ -150,6 +175,21 @@ class App(QWidget):
 
         # 记录当前区域
         self.last_area = new_area
+=======
+    '''
+    def move_pet(self):
+        # 随机生成新的目标位置
+        screen = QDesktopWidget().screenGeometry()
+        new_x = random.randint(0, screen.width() - self.pm_pet.width())
+        new_y = random.randint(0, screen.height() - self.pm_pet.height())
+
+        # 使用动画将标签平滑移动到新位置
+        self.animation = QPropertyAnimation(self.lb_pet, b"pos")
+        self.animation.setDuration(2000)  # 动画持续时间为 2 秒
+        self.animation.setStartValue(self.lb_pet.pos())
+        self.animation.setEndValue(QPoint(new_x, new_y))
+        self.animation.start()
+>>>>>>> eb76708b079cfa81903a29b5ce253c6ecb1c9e92
     '''
 
     def close_app(self):
